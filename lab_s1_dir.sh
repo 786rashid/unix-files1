@@ -1,7 +1,7 @@
 
-1.To create a directory for unix-$ mkdir prajwal
+1.To create a directory for unix-$ mkdir rashid
 2.To see the directory created-$ ls
-3.To display all the files in the system-$ cd prajwal
+3.To display all the files in the system-$ cd rashid
 4.To create a file in unix-$ vim filename
 5.To create a text document-$ gedit filename.txt
 6.To delete a character-Esc+x
