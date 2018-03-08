@@ -1,0 +1,2 @@
+grep -rl "double" "usr\share"
+
