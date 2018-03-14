@@ -1,0 +1,6 @@
+Q. prefix date infront of the file name and display
+
+cdate=$(date +%Y-%m-%d)
+for file in file1 file2; do
+    mv "$file" "$cdate"_"$file"
+done
