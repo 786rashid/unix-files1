@@ -1,0 +1,254 @@
+
+FILTER COMMANDS:
+
+HEAD:
+
+cs2016a206@user:~/rashid$ head -n 6 csea2_unix.csv
+USN number,Name,Reg. No
+1,Adam,16001
+2,Ben,16002
+3,Cathy,16003
+4,Dom,16004
+5,Elen,16005
+
+cs2016a206@user:~/rashid$ head -c 15 csea2_unix.csv
+USN number,Name
+
+TAIL:
+
+cs2016a206@user:~/rashid$ tail -n 3 csea2_unix.csv
+13,missa,16013
+14,nani,16014
+15,olive,16015
+
+SORT:
+
+
+cs2016a206@user:~/rashid$ sort csea2_unix.csv
+10,John,16010
+11,korin,16011
+12,Lannister,16012
+13,missa,16013
+14,nani,16014
+15,olive,16015
+1,Adam,16001
+2,Ben,16002
+3,Cathy,16003
+4,Dom,16004
+5,Elen,16005
+6,Farooq,16006
+7,Gal,16007
+8,Harry,16008
+9,Inam,16009
+USN number,Name,Reg. No
+
+
+cs2016a206@user:~/rashid$ sort -r csea2_unix.csv
+USN number,Name,Reg. No
+9,Inam,16009
+8,Harry,16008
+7,Gal,16007
+6,Farooq,16006
+5,Elen,16005
+4,Dom,16004
+3,Cathy,16003
+2,Ben,16002
+1,Adam,16001
+15,olive,16015
+14,nani,16014
+13,missa,16013
+12,Lannister,16012
+11,korin,16011
+10,John,16010
+
+
+UNIQ:
+
+cs2016a206@user:~/rashid$ uniq csea2_unix.csv
+USN number,Name,Reg. No
+1,Adam,16001
+2,Ben,16002
+3,Cathy,16003
+4,Dom,16004
+5,Elen,16005
+6,Farooq,16006
+7,Gal,16007
+8,Harry,16008
+9,Inam,16009
+10,John,16010
+11,korin,16011
+12,Lannister,16012
+13,missa,16013
+14,nani,16014
+15,missa,16015
+
+
+cs2016a206@user:~/rashid$ uniq -c csea2_unix.csv
+      1 USN number,Name,Reg. No
+      1 1,Adam,16001
+      1 2,Ben,16002
+      1 3,Cathy,16003
+      1 4,Dom,16004
+      1 5,Elen,16005
+      1 6,Farooq,16006
+      1 7,Gal,16007
+      1 8,Harry,16008
+      1 9,Inam,16009
+      1 10,John,16010
+      1 11,korin,16011
+      1 12,Lannister,16012
+      1 13,missa,16013
+      1 14,nani,16014
+      1 15,missa,16015
+
+WC:
+
+cs2016a206@user:~/rashid$ wc csea2_unix.csv
+ 16  18 234 csea2_unix.csv
+
+cs2016a206@user:~/rashid$ wc -l csea2_unix.csv
+16 csea2_unix.csv
+
+cs2016a206@user:~/rashid$ wc -c csea2_unix.csv
+234 csea2_unix.csv
+
+
+
+cs2016a206@user:~/rashid$ cut -d " " -f 2 csea2_unix.csv
+number,Name,Reg.
+1,Adam,16001
+2,Ben,16002
+3,Cathy,16003
+4,Dom,16004
+5,Elen,16005
+6,Farooq,16006
+7,Gal,16007
+8,Harry,16008
+9,Inam,16009
+10,John,16010
+11,korin,16011
+12,Lannister,16012
+13,missa,16013
+14,nani,16014
+15,missa,16015
+
+
+
+cs2016a206@user:~/rashid$ cat -A csea2_unix.csv cse2.csv
+USN number,Name,Reg. No$
+1,Adam,16001$
+2,Ben,16002$
+3,Cathy,16003$
+4,Dom,16004$
+5,Elen,16005$
+6,Farooq,16006$
+7,Gal,16007$
+8,Harry,16008$
+9,Inam,16009$
+10,John,16010$
+11,korin,16011$
+12,Lannister,16012$
+13,missa,16013$
+14,nani,16014$
+15,missa,16015$
+16,prajwal,16016$
+
+
+
+
+cs2016a206@user:~/rashid$ paste csea2_unix.csv cse2.csv
+USN number,Name,Reg. No	16,prajwal,16016
+1,Adam,16001	
+2,Ben,16002	
+3,Cathy,16003	
+4,Dom,16004	
+5,Elen,16005	
+6,Farooq,16006	
+7,Gal,16007	
+8,Harry,16008	
+9,Inam,16009	
+10,John,16010	
+11,korin,16011	
+12,Lannister,16012	
+13,missa,16013	
+14,nani,16014	
+15,missa,16015	
+
+
+1) display third column of csea.csv without printing the heade "cgpa" also sort the same
+answer :
+cs2016a206@user:~/rashid$ cut -d , -f 3 csea2_unix.csv|sort|grep -v "CGPA"
+10
+3.2
+4.4
+4.6
+5.2
+6.6
+7.4
+8.7
+8.9
+9
+9.2
+9.3
+9.5
+9.8
+9.9
+
+to sort the name, we will use the command 
+$ cut -d , -f 2 cseunix.csv|grep -v "Name"|sort
+----------------------------------------------------------------------------------
+2.Display current time using date command
+
+date = print or set the system date and time
+
+$ date +%X
+10:28:17  IST
+----------------------------------------------------------------------------------------
+3.Use uniq with all possible option 
+
+-c = prefix lines by the number of occurrences
+$ uniq -c cseunix.csv
+
+-d = only print duplicate lines, one for each group
+$ uniq -d cseunix.csv
+
+-D = print all duplicate lines
+$ uniq -D cseunix.csv
+
+-f = avoid comparing the first N fields
+$ uniq -f cseunix.csv
+
+-i = ignore differences in case when comparing
+$ uniq -i cseunix.csv
+
+-u = only print unique lines
+$ uniq -u cseunix.csv
+
+-z = line delimiter is NUL, not newline
+$ uniq -z cseunix.csv
+
+-w = compare no more than N characters in lines
+$ uniq -w cseunix.csv
+------------------------------------------------------------------------------------------------
+4.Print number of lines from ls -l option
+
+ls - list directory contents
+
+$ ls -l
+total 52
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Desktop
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Documents
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Downloads
+-rw-r--r-- 1 cs2016a204 cs2016a204 8980 Jan  2 11:43 examples.desktop
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Music
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 24 10:19 prajwal
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Pictures
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Public
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Templates
+-rw-r--r-- 1 cs2016a204 cs2016a204  117 Jan 24 09:37 test1
+drwxr-xr-x 2 cs2016a204 cs2016a204 4096 Jan 16 14:43 Videos 
+------------------------------------------------------------------------------------------------------
+5.Display USN number from 7-14 along with other fields
+
+tail - output the last part of files
+$ tail -n 7 cseunix.csv
