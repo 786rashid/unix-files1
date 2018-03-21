@@ -1,0 +1,44 @@
+Q. Create a search engine to find a word in all the files and directories in the data base.
+
+  PROGRAM
+  -------
+echo "Enter the word that you want to search in the database"
+read word
+echo " $word found"
+echo "Press 1 for the information of the files where '$word' is found"
+read n
+if [ $n -eq 1 ]
+then
+grep -r $word
+fi
+---------------------------------------------------------------------------
+  OUTPUT
+  ------
+
+
+rashid@rashid:~$ sh engine.sh
+Enter the word that you want to search in the database
+anaconda
+ anaconda found
+Press 1 for the information of the files where 'anaconda' is found
+1
+
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/recipe/bld.bat::: from upstream recipe (https://github.com/ContinuumIO/anaconda-recipes/blob/master/qt/bld.bat)
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json:      "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
+anaconda3/pkgs/qt-5.6.2-h974d657_12/info/paths.json: "prefix_placeholder": "/opt/anaconda1anaconda2anaconda3",
